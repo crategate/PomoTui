@@ -26,11 +26,6 @@ impl Default for App {
 }
 
 impl App {
-    /// Constructs a new instance of [`App`].
-    let mut ho_ass_terminal = ratatui::init_with_options(TerminalOptions {
-        viewport: Viewport::inline(8),
-    })
-
     pub fn new() -> Self {
         Self::default()
     }
