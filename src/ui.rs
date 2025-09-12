@@ -2,7 +2,7 @@ use ratatui::{
     buffer::Buffer,
     layout::{Alignment, Rect},
     style::{Color, Stylize},
-    widgets::{Block, BorderType, Paragraph, Widget},
+    widgets::{Block, BorderType, Gauge, LineGauge, List, ListItem, Paragraph, Widget},
 };
 
 use crate::app::App;
