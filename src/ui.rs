@@ -1,7 +1,7 @@
 use ratatui::{
     buffer::Buffer,
     layout::{Alignment, Rect},
-    style::{Color, Stylize},
+    style::{Color, Style, Stylize},
     widgets::{Block, BorderType, Gauge, LineGauge, List, ListItem, Paragraph, Widget},
 };
 
@@ -34,6 +34,10 @@ impl Widget for &App {
             .bg(Color::Black)
             .centered();
 
+        let gauge = Gauge::default()
+            .gauge_style(Style::default().fg(Color::Yellow))
+            .ratio(49.1 / 100.0);
         paragraph.render(area, buf);
+        gauge.render(area, buf);
     }
 }
