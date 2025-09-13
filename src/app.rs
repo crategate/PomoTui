@@ -49,6 +49,7 @@ impl App {
                 Event::App(app_event) => match app_event {
                     AppEvent::Increment => self.increment_counter(),
                     AppEvent::Decrement => self.decrement_counter(),
+                    AppEvent::Start => self.start(),
                     AppEvent::Quit => self.quit(),
                 },
             }
@@ -63,6 +64,7 @@ impl App {
             KeyCode::Char('c' | 'C') if key_event.modifiers == KeyModifiers::CONTROL => {
                 self.events.send(AppEvent::Quit)
             }
+            KeyCode::Enter => self.events.send(AppEvent::Start),
             KeyCode::Right => self.events.send(AppEvent::Increment),
             KeyCode::Left => self.events.send(AppEvent::Decrement),
             // Other handlers you could add here.
@@ -76,6 +78,8 @@ impl App {
     /// The tick event is where you can update the state of your application with any logic that
     /// needs to be updated at a fixed frame rate. E.g. polling a server, updating an animation.
     pub fn tick(&self) {}
+    //start a timer
+    pub fn start(&mut self) {}
 
     /// Set running to false to quit the application.
     pub fn quit(&mut self) {
