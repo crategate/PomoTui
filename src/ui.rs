@@ -36,7 +36,7 @@ impl Widget for &App {
 
         let gauge = Gauge::default()
             .gauge_style(Style::default().fg(Color::Yellow))
-            .ratio(49.1 / 100.0);
+            .ratio(self.progress / 100.0);
         paragraph.render(area, buf);
         gauge.render(area, buf);
     }

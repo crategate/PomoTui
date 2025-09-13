@@ -13,6 +13,10 @@ pub struct App {
     pub counter: u8,
     /// Event handler.
     pub events: EventHandler,
+
+    // mode status of pomo, and the progress by %
+    pub status: u8,
+    pub progress: f64,
 }
 
 impl Default for App {
@@ -21,6 +25,8 @@ impl Default for App {
             running: true,
             counter: 0,
             events: EventHandler::new(),
+            status: 0,
+            progress: 0.0,
         }
     }
 }
